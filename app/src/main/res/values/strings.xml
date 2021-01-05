@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">CurrencyConversorAPI</string>
+
+    <string-array name="currencies1">
+        <item>EUR</item>
+
+        <item>BRL</item>
+        <item>USD</item>
+
+        <item>AUD</item>
+        <item>CAD</item>
+        <item>JPY</item>
+
+    </string-array>
+
+    <string-array name="currencies2">
+        <item>USD</item>
+
+        <item>EUR</item>
+        <item>BRL</item>
+
+        <item>AUD</item>
+        <item>CAD</item>
+        <item>JPY</item>
+
+    </string-array>
+
+
+</resources>

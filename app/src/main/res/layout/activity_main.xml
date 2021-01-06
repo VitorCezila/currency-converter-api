@@ -38,7 +38,7 @@
                     android:layout_height="wrap_content"
                     android:ems="5"
                     android:hint="From"
-                    android:inputType="number"/>
+                    android:inputType="number" />
 
                 <Spinner
                     android:layout_width="wrap_content"

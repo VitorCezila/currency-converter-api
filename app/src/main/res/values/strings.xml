@@ -25,5 +25,7 @@
 
     </string-array>
 
+    <string name="contentDescLogo">piggyLogo</string>
+
 
 </resources>

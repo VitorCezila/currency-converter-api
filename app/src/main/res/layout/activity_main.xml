@@ -7,8 +7,20 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Currency Converter"
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:textColor="@color/white"
+        android:fontFamily="sans-serif-thin"
+        android:paddingTop="20dp"
+        android:textSize="35sp"
+        />
+
     <androidx.cardview.widget.CardView
-        android:backgroundTint="@color/llColor"
+        android:backgroundTint="@color/endColorSplash"
         android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

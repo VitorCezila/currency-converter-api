@@ -5,7 +5,7 @@
     <color name="colorAccent">#ffff</color>
     <color name="white">#fff</color>
     <color name="black">#000</color>
-    <color name="startColorSplash">#ad5389</color>
-    <color name="endColorSplash">#3c1053</color>
+    <color name="startColorSplash">#005C97</color>
+    <color name="endColorSplash">#64b3f4</color>
     <color name="llColor">#3c1053</color>
 </resources>

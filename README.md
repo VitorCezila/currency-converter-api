@@ -1,4 +1,7 @@
 # CurrencyConverter-API
+
+![](images/icon_currency.png)
+
 Fast currency conversion app 💰
 
 Available currencies: USD, BRL, EUR, AUD and JPY

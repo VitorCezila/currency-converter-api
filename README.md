@@ -1,6 +1,6 @@
 # CurrencyConverter-API
 
-![](images/icon_currency.png)
+![](screenshots/ic_logo_done.png)
 
 Fast currency conversion app 💰
 

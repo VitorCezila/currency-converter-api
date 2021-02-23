@@ -5,7 +5,13 @@
     <color name="colorAccent">#ffff</color>
     <color name="white">#fff</color>
     <color name="black">#000</color>
-    <color name="startColorSplash">#005C97</color>
-    <color name="endColorSplash">#64b3f4</color>
-    <color name="llColor">#3c1053</color>
+
+    <!--my colors-->
+    <color name="color_bg_main">#201A2F</color>
+    <color name="color_start_splash">#1F1B2D</color>
+    <color name="color_end_splash">#1D1E2C</color>
+    <color name="bg_bottom_color">#282b3e</color>
+
+    <color name="color_header_text">#bbb29b</color>
+    <color name="color_bottom_button">#201A2F</color>
 </resources>

@@ -18,39 +18,50 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
+    <TextView
+        android:id="@+id/tv_fromBase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/futura_heavy"
+        android:rotation="-90"
+        android:text="2.90 BRL"
+        android:textColor="@color/color_header_text"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.154"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.457" />
 
     <ImageView
         android:id="@+id/iv_header_flags"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:src="@drawable/ic_brazil"
-        app:layout_constraintBottom_toTopOf="@+id/et_fromConversion"
+        app:layout_constraintBottom_toTopOf="@+id/tv_fromBase"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.167"
+        app:layout_constraintHorizontal_bias="0.168"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.59" />
+        app:layout_constraintVertical_bias="0.381" />
 
     <Spinner
-        android:id="@+id/spinner_fromConversion"
+        android:id="@+id/spinner_fromConversion2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.093"
+        app:layout_constraintEnd_toStartOf="@+id/et_fromConversion2"
+        app:layout_constraintHorizontal_bias="0.565"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.77" />
 
     <EditText
-        android:id="@+id/et_fromConversion"
+        android:id="@+id/et_fromConversion2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/sofia_pro"
-        android:maxLength="6"
-        android:hint="From"
-        android:inputType="numberDecimal"
-        android:textColor="@color/color_header_text"
+        android:hint="00.00"
         android:textColorHint="@color/color_header_text"
         android:textSize="80sp"
         app:layout_constraintBottom_toBottomOf="@+id/view"
@@ -71,28 +82,42 @@
         app:layout_constraintVertical_bias="0.093" />
 
     <Spinner
-        android:id="@+id/spinner_toConversion"
+        android:id="@+id/spinner_toConversion2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintHorizontal_bias="0.093"
+        app:layout_constraintEnd_toStartOf="@+id/tv_toConversion2"
+        app:layout_constraintHorizontal_bias="0.747"
         app:layout_constraintStart_toStartOf="@+id/view"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.842" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/futura_heavy"
+        android:rotation="-90"
+        android:text="1 CAD"
+        android:textColor="@color/color_header_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.147"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_bottom_flags"
+        app:layout_constraintVertical_bias="0.801" />
 
     <TextView
-        android:id="@+id/tv_toConversion"
+        android:id="@+id/tv_toConversion2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/sofia_pro"
-        android:text="To"
+        android:text="230.35"
         android:textColor="@color/color_header_text"
         android:textSize="55sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.612"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view"
         app:layout_constraintVertical_bias="0.494" />

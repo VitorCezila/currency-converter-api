@@ -16,8 +16,8 @@
     <string-array name="currencies2">
         <item>USD</item>
 
-        <item>EUR</item>
         <item>BRL</item>
+        <item>EUR</item>
 
         <item>AUD</item>
         <item>CAD</item>

@@ -6,11 +6,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Spinner
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatDelegate
+import android.widget.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -18,8 +14,10 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.json.JSONObject
 import java.lang.Exception
-import java.lang.String.format
 import java.net.URL
+import java.text.DecimalFormat
+import kotlin.math.round
+import kotlin.math.roundToInt
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,10 +31,13 @@ class MainActivity : AppCompatActivity() {
 
         spinnerSetup()
         textChanged()
+
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+        actionBar?.hide()
     }
 
     private fun textChanged() {
-        et_firstConversion.addTextChangedListener(object: TextWatcher {
+        et_fromConversion.addTextChangedListener(object: TextWatcher {
             override fun afterTextChanged(s: Editable?) {
                 try {
                     getApiResult()
@@ -57,7 +58,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getApiResult() {
-        if(et_firstConversion != null && et_firstConversion.text.isNotEmpty() && et_firstConversion.text.isNotBlank()) {
+        if(et_fromConversion != null && et_fromConversion.text.isNotEmpty() && et_fromConversion.text.isNotBlank()) {
 
             val API = "https://api.exchangeratesapi.io/latest?base=$baseCurrency&symbols=$convertedToCurrency"
 
@@ -76,8 +77,8 @@ class MainActivity : AppCompatActivity() {
                         Log.d("Main", apiResult)
 
                         withContext(Dispatchers.Main) {
-                            val text = ((et_firstConversion.text.toString().toFloat()) * conversionRate).toString()
-                            et_secondConversion?.setText(text) //update in real time the edit text
+                            val text = (((et_fromConversion.text.toString().toFloat()) * conversionRate)).toString()
+                            tv_toConversion?.setText(text) //update in real time the edit text
                         }
                     } catch (e: Exception) {
                         Log.e("Main", "$e")
@@ -89,18 +90,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun spinnerSetup() {
-        val spinner1: Spinner = findViewById(R.id.spinner_firstConversion)
-        val spinner2: Spinner = findViewById(R.id.spinner_secondConversion)
+        val spinner1: Spinner = findViewById(R.id.spinner_fromConversion)
+        val spinner2: Spinner = findViewById(R.id.spinner_toConversion)
 
         //first spinner adapter from strings.xml items
-        ArrayAdapter.createFromResource(this, R.array.currencies1, android.R.layout.simple_spinner_item
-        ).also { adapter ->
+        ArrayAdapter.createFromResource(this, R.array.currencies1, R.layout.spinner_item).also { adapter ->
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             spinner1.adapter = adapter
         }
 
         //second spinner adapter from strings.xml items
-        ArrayAdapter.createFromResource(this, R.array.currencies2, android.R.layout.simple_spinner_item
+        ArrayAdapter.createFromResource(this, R.array.currencies2, R.layout.spinner_item
         ).also { adapter ->
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             spinner2.adapter = adapter
@@ -110,14 +110,12 @@ class MainActivity : AppCompatActivity() {
             override fun onNothingSelected(parent: AdapterView<*>?) {
             }
 
-            override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
-            ) {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 baseCurrency = parent?.getItemAtPosition(position).toString()
                 getApiResult()
+
+                //changes the image according to the spinner
+                findViewById<ImageView>(R.id.iv_header_flags).setImageResource(CurrencyUtils.getFlagsIconsResId1(position))
             }
 
         })
@@ -134,10 +132,10 @@ class MainActivity : AppCompatActivity() {
             ) {
                 convertedToCurrency = parent?.getItemAtPosition(position).toString()
                 getApiResult()
+
+                //changes the image according to the spinner
+                findViewById<ImageView>(R.id.iv_bottom_flags).setImageResource(CurrencyUtils.getFlagsIconsResId2(position))
             }
-
         })
-
     }
-
 }
